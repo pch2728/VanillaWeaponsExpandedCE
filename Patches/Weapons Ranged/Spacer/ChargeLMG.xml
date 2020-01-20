@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <li Class='CombatExtended.PatchOperationMakeGunCECompatible'>
+        <defName>VWE_Gun_ChargeLMG</defName>
+
+        <statBases>
+          <WorkToMake>50000</WorkToMake>
+          <SightsEfficiency>1.60</SightsEfficiency>
+          <ShotSpread>0.34</ShotSpread>
+          <SwayFactor>1.26</SwayFactor>
+          <Bulk>13.56</Bulk>
+          <Mass>9.95</Mass>
+          <RangedWeapon_Cooldown>0.90</RangedWeapon_Cooldown>
+        </statBases>
+
+        <Properties>
+          <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+          <hasStandardCommand>True</hasStandardCommand>
+          <defaultProjectile>Bullet_6x24mmCharged</defaultProjectile>
+          <burstShotCount>15</burstShotCount>
+          <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+          <warmupTime>1.8</warmupTime>
+          <range>60</range>
+          <soundCast>Shot_ChargeBlaster</soundCast>
+          <soundCastTail>GunTail_Heavy</soundCastTail>
+          <muzzleFlashScale>9</muzzleFlashScale>
+          <recoilAmount>0.56</recoilAmount>
+          <recoilPattern>Mounted</recoilPattern>
+        </Properties>
+
+        <AmmoUser>
+          <magazineSize>100</magazineSize>
+          <reloadTime>5.6</reloadTime>
+          <ammoSet>AmmoSet_6x24mmCharged</ammoSet>
+        </AmmoUser>
+
+        <FireModes>
+          <aiUseBurstMode>False</aiUseBurstMode>
+          <aiAimMode>SuppressFire</aiAimMode>
+          <aimedBurstShotCount>5</aimedBurstShotCount>
+        </FireModes>
+
+        <weaponTags>
+          <li>SpacerGun</li>
+        </weaponTags>
+      </li>
+
+      <!-- Tools -->
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_Gun_ChargeLMG']/tools</xpath>
+
+        <value>
+          <tools>
+            <li Class="CombatExtended.ToolCE">
+              <label>stock</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>8</power>
+              <cooldownTime>1.55</cooldownTime>
+              <chanceFactor>1.5</chanceFactor>
+              <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+            </li>
+            <li Class="CombatExtended.ToolCE">
+              <label>barrel</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>5</power>
+              <cooldownTime>2.02</cooldownTime>
+              <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+            </li>
+            <li Class="CombatExtended.ToolCE">
+              <label>muzzle</label>
+              <capacities>
+                <li>Poke</li>
+              </capacities>
+              <power>8</power>
+              <cooldownTime>1.55</cooldownTime>
+              <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+            </li>
+          </tools>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>

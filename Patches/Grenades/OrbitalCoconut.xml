@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <!-- Grenade -->
+      <li Class='PatchOperationAdd'>
+        <xpath>*/ThingDef[defName='VWE_Grenade_OPOrbBombGrenade']</xpath>
+
+        <value>
+          <thingClass>CombatExtended.AmmoThing</thingClass>
+          <stackLimit>75</stackLimit>
+          <resourceReadoutPriority>First</resourceReadoutPriority>
+        </value>
+      </li>
+
+      <li Class='PatchOperationAttributeSet'>
+        <xpath>*/ThingDef[defName='VWE_Grenade_OPOrbBombGrenade']</xpath>
+
+        <attribute>Class</attribute>
+        <value>CombatExtended.AmmoDef</value>
+      </li>
+
+      <li Class='PatchOperationSequence'>
+        <success>Always</success>
+
+        <operations>
+          <li Class='PatchOperationTest'>
+            <xpath>*/ThingDef[defName='VWE_Grenade_OPOrbBombGrenade']/comps</xpath>
+            <success>Invert</success>
+          </li>
+
+          <li Class='PatchOperationAdd'>
+            <xpath>*/ThingDef[defName='VWE_Grenade_OPOrbBombGrenade']</xpath>
+            <value>
+              <comps />
+            </value>
+          </li>
+        </operations>
+      </li>
+
+      <li Class='PatchOperationAdd'>
+        <xpath>*/ThingDef[defName='VWE_Grenade_OPOrbBombGrenade']/comps</xpath>
+
+        <value>
+          <li Class='CombatExtended.CompProperties_ExplosiveCE'>
+            <explosionRadius>2.66</explosionRadius>
+            <explosionDamageDef>Bomb</explosionDamageDef>
+          </li>
+        </value>
+      </li>
+
+      <li Class='CombatExtended.PatchOperationMakeGunCECompatible'>
+        <defName>VWE_Grenade_OPOrbBombGrenade</defName>
+
+        <statBases>
+          <Mass>1</Mass>
+          <MarketValue>2.25</MarketValue>
+          <SightsEfficiency>1</SightsEfficiency>
+          <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+        </statBases>
+
+        <Properties>
+          <label>throw marker grenade</label>
+          <verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
+          <hasStandardCommand>true</hasStandardCommand>
+          <defaultProjectile>VWE_Grenade_OPOrbBomb</defaultProjectile>
+          <range>30</range>
+          <minRange>14</minRange>
+          <warmupTime>1.5</warmupTime>
+          <soundCast>ThrowGrenade</soundCast>
+          <noiseRadius>4</noiseRadius>
+          <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+          <onlyManualCast>true</onlyManualCast>
+          <ignorePartialLoSBlocker>true</ignorePartialLoSBlocker>
+          <targetParams>
+            <canTargetLocations>true</canTargetLocations>
+          </targetParams>
+        </Properties>
+
+        <weaponTags>
+          <li>CE_AI_Grenade</li>
+          <li>CE_OneHandedWeapon</li>
+        </weaponTags>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>

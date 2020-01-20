@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+
+  <Operation Class='PatchOperationFindMod'>
+    <mods>
+      <li>Combat Extended</li>
+    </mods>
+
+    <match Class='PatchOperationSequence'>
+      <success>Always</success>
+
+      <operations>
+        <!-- Quickdraw Update -->
+        <li Class='PatchOperationFindMod'>
+          <mods>
+            <li>Vanilla Weapons Expanded - Quickdraw</li>
+          </mods>
+
+          <match Class='PatchOperationRemove'>
+            <xpath>Defs/ResearchProjectDef[defName = 'VWE_Quickdraw']</xpath>
+          </match>
+        </li>
+
+        <li Class='PatchOperationFindMod'>
+          <mods>
+            <li>Vanilla Weapons Expanded</li>
+          </mods>
+
+          <match Class='PatchOperationSequence'>
+            <success>Always</success>
+
+            <operations>
+              <!-- Remove unused research projects-->
+              <li Class='PatchOperationRemove'>
+                <xpath>
+                  Defs/ResearchProjectDef[
+                    defName = 'VWE_HeavyWeapons' or
+                    defName = 'VWE_DesignatedMarksmanRifle' or
+                    defName = 'VWE_SpecializedFirearms' or
+                    defName = 'VWE_Flamethrower' or]
+                </xpath>
+              </li>
+
+              <!-- Removes VWE_HeavyWeapons from research project prerequisites -->
+              <li Class='PatchOperationReplace'>
+                <xpath>Defs/ResearchProjectDef[defName = 'VWE_LaserTargetingSystems']/prerequisites</xpath>
+
+                <value>
+                  <prerequisites>
+                    <li>ChargedShot</li>
+                  </prerequisites>
+                </value>
+              </li>
+
+              <!-- Changes Doomsday prerequisite back to CE_AdvancedLaunchers -->
+              <li Class='PatchOperationReplace'>
+                <xpath>Defs/ThingDef[defName = 'Gun_DoomsdayRocket']/recipeMaker/researchPrerequisite</xpath>
+
+                <value>
+                  <researchPrerequisite>CE_AdvancedLaunchers</researchPrerequisite>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+</Patch>

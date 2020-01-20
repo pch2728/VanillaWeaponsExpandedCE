@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <li Class='CombatExtended.PatchOperationMakeGunCECompatible'>
+        <defName>VWE_Tool_Whip</defName>
+
+        <statBases>
+          <WorkToMake>6800</WorkToMake>
+          <SightsEfficiency>1</SightsEfficiency>
+          <ShotSpread>0.5</ShotSpread>
+          <SwayFactor>0.26</SwayFactor>
+          <Bulk>1.5</Bulk>
+          <Mass>0.9</Mass>
+          <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+        </statBases>
+
+        <Properties>
+          <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+          <hasStandardCommand>True</hasStandardCommand>
+          <defaultProjectile>Projectile_VWE_Whip</defaultProjectile>
+          <warmupTime>1</warmupTime>
+          <range>15</range>
+          <soundCast>VWE_Shot_Whip</soundCast>
+        </Properties>
+
+        <FireModes />
+      </li>
+
+      <!-- Tools -->
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_Tool_Whip']/tools</xpath>
+
+        <value>
+          <tools>
+            <li Class='CombatExtended.ToolCE'>
+              <label>handle</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>3</power>
+              <cooldownTime>2</cooldownTime>
+              <chanceFactor>1.33</chanceFactor>
+              <armorPenetrationBlunt>0.25</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+            </li>
+          </tools>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <li Class='PatchOperationAdd'>
+        <xpath>Defs/ThingDef[defName='VWE_MeleeWeapon_Halberd']/statBases</xpath>
+
+        <value>
+          <Bulk>14</Bulk>
+          <MeleeCounterParryBonus>1.68</MeleeCounterParryBonus>
+        </value>
+      </li>
+
+      <li Class='PatchOperationAdd'>
+        <xpath>Defs/ThingDef[defName='VWE_MeleeWeapon_Halberd']</xpath>
+
+        <value>
+          <equippedStatOffsets>
+            <MeleeCritChance>0.17</MeleeCritChance>
+            <MeleeParryChance>1.45</MeleeParryChance>
+            <MeleeDodgeChance>0.9</MeleeDodgeChance>
+          </equippedStatOffsets>
+        </value>
+      </li>
+
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_MeleeWeapon_Halberd']/tools</xpath>
+
+        <value>
+          <tools>
+            <li Class='CombatExtended.ToolCE'>
+              <label>handle</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>10</power>
+              <cooldownTime>1.66</cooldownTime>
+              <armorPenetrationBlunt>1.88</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+            </li>
+
+            <li Class='CombatExtended.ToolCE'>
+              <label>point</label>
+              <capacities>
+                <li>Stab</li>
+              </capacities>
+              <power>32</power>
+              <cooldownTime>2</cooldownTime>
+              <armorPenetration>0.25</armorPenetration>
+              <linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+            </li>
+
+            <li Class='CombatExtended.ToolCE'>
+              <label>edge</label>
+              <capacities>
+                <li>Cut</li>
+              </capacities>
+              <power>46</power>
+              <cooldownTime>2</cooldownTime>
+              <armorPenetrationBlunt>7.592</armorPenetrationBlunt>
+              <armorPenetrationSharp>2.58</armorPenetrationSharp>
+              <linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+            </li>
+          </tools>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Ammo Category -->
+  <CombatExtended.AmmoCategoryDef>
+    <defName>CompoundArrow</defName>
+    <label>compunt arrow</label>
+    <labelShort>compunt</labelShort>
+    <description>Modern arrow with carbon shaft made for enhanced armor penetration.</description>
+    <advanced>true</advanced>
+  </CombatExtended.AmmoCategoryDef>
+
+  <!-- Thing Category -->
+  <ThingCategoryDef>
+    <defName>AmmoVWECompoundArrow</defName>
+    <label>compoun arrows</label>
+    <parent>AmmoNeolithic</parent>
+    <iconPath>UI/Icons/ThingCategories/CaliberArrow</iconPath>
+  </ThingCategoryDef>
+
+  <!-- Ammo Set -->
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_VWE_CompoundArrow</defName>
+    <label>compound arrow</label>
+    <ammoTypes>
+      <Ammo_VWE_CompoundArrow>Projectile_VWE_CompoundArrow</Ammo_VWE_CompoundArrow>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+
+  <!-- Ammo -->
+  <ThingDef Class="CombatExtended.AmmoDef" Name="VWE_ArrowCompound" ParentName="NeolithicAmmoBase" Abstract="True">
+    <description>Modern arrows with a carbon shaft designed to be fired from a compound bow.</description>
+
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <MarketValue>1.6</MarketValue>
+      <Mass>0.8</Mass>
+      <Bulk>0.8</Bulk>
+      <Flammability>0.3</Flammability>
+    </statBases>
+
+    <thingCategories>
+      <li>AmmoArrows</li>
+    </thingCategories>
+
+    <stackLimit>200</stackLimit>
+
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting_FueledSmithy</li>
+      <li>CE_AutoEnableCrafting_ElectricSmithy</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="VWE_ArrowCompound">
+    <defName>Ammo_VWE_CompoundArrow</defName>
+    <label>compound arrow</label>
+
+    <graphicData>
+      <texPath>Things/Ammo/Neolithic/Arrow/Steel</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+
+    <ammoClass>CompoundArrow</ammoClass>
+  </ThingDef>
+
+  <!-- Projectile -->
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseBullet">
+    <defName>Projectile_VWE_CompoundArrow</defName>
+    <label>compound arrow</label>
+
+    <graphicData>
+      <texPath>Things/Projectile/Arrow_Modern</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageDef>Arrow</damageDef>
+      <speed>50</speed>
+
+      <flyOverhead>False</flyOverhead>
+      <stoppingPower>1</stoppingPower>
+      <damageAmountBase>10</damageAmountBase>
+      <armorPenetrationBlunt>4</armorPenetrationBlunt>
+      <armorPenetrationSharp>1</armorPenetrationSharp>
+      <preExplosionSpawnChance>0.444</preExplosionSpawnChance>
+      <preExplosionSpawnThingDef>Ammo_VWE_CompoundArrow</preExplosionSpawnThingDef>
+    </projectile>
+  </ThingDef>
+
+  <!-- Recipe -->
+  <RecipeDef ParentName="AmmoRecipeNeolithicBase">
+    <defName>MakeAmmo_VWE_CompoundArrow</defName>
+    <label>make compound arrows x10</label>
+    <description>Craft 10 compound arrows.</description>
+    <jobString>Making compound arrows.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_VWE_CompoundArrow>10</Ammo_VWE_CompoundArrow>
+    </products>
+  </RecipeDef>
+
+</Defs>

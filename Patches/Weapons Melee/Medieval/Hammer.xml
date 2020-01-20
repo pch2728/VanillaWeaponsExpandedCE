@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <li Class='PatchOperationAdd'>
+        <xpath>Defs/ThingDef[defName='VWE_MeleeWeapon_Hammer']/statBases</xpath>
+
+        <value>
+          <Bulk>7</Bulk>
+          <MeleeCounterParryBonus>0.38</MeleeCounterParryBonus>
+        </value>
+      </li>
+
+      <li Class='PatchOperationAdd'>
+        <xpath>Defs/ThingDef[defName='VWE_MeleeWeapon_Hammer']/equippedStatOffsets</xpath>
+
+        <value>
+          <MeleeCritChance>1.2</MeleeCritChance>
+          <MeleeParryChance>0.38</MeleeParryChance>
+          <MeleeDodgeChance>0.3</MeleeDodgeChance>
+        </value>
+      </li>
+
+      <li Class='PatchOperationAdd'>
+        <xpath>Defs/ThingDef[defName='VWE_MeleeWeapon_Baton']/weaponTags</xpath>
+        <value>
+          <li>CE_OneHandedWeapon</li>
+        </value>
+      </li>
+
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_MeleeWeapon_Hammer']/tools</xpath>
+
+        <value>
+          <tools>
+            <li Class='CombatExtended.ToolCE'>
+              <label>handle</label>
+              <capacities>
+                <li>Poke</li>
+              </capacities>
+              <power>4</power>
+              <cooldownTime>1.9</cooldownTime>
+              <armorPenetrationBlunt>1</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+            </li>
+
+            <li Class='CombatExtended.ToolCE'>
+              <label>head</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>26</power>
+              <cooldownTime>3.48</cooldownTime>
+              <armorPenetrationBlunt>5.8</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
+            </li>
+          </tools>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

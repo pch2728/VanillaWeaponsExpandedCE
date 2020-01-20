@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <li Class='CombatExtended.PatchOperationMakeGunCECompatible'>
+        <defName>VWE_SawedOffShotgun</defName>
+
+        <statBases>
+          <WorkToMake>7000</WorkToMake>
+          <SightsEfficiency>1</SightsEfficiency>
+          <ShotSpread>0.19</ShotSpread>
+          <SwayFactor>2.34</SwayFactor>
+          <Bulk>4.39</Bulk>
+          <Mass>1.90</Mass>
+          <RangedWeapon_Cooldown>0.43</RangedWeapon_Cooldown>
+        </statBases>
+
+        <Properties>
+          <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+          <hasStandardCommand>True</hasStandardCommand>
+          <defaultProjectile>Bullet_12Gauge_Buck</defaultProjectile>
+          <burstShotCount>2</burstShotCount>
+          <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+          <warmupTime>0.8</warmupTime>
+          <range>10</range>
+          <soundCast>Shot_Shotgun</soundCast>
+          <soundCastTail>GunTail_Heavy</soundCastTail>
+          <muzzleFlashScale>9</muzzleFlashScale>
+        </Properties>
+
+        <AmmoUser>
+          <magazineSize>2</magazineSize>
+          <reloadTime>1.7</reloadTime>
+          <ammoSet>AmmoSet_12Gauge</ammoSet>
+        </AmmoUser>
+
+        <FireModes>
+          <aiAimMode>AimedShot</aiAimMode>
+        </FireModes>
+
+        <weaponTags>
+          <li>Gun</li>
+          <li>CE_Sidearm</li>
+          <li>CE_OneHandedWeapon</li>
+        </weaponTags>
+
+        <!-- Required research rework -->
+        <researchPrerequisite>Gunsmithing</researchPrerequisite>
+      </li>
+
+      <!-- Name -->
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_SawedOffShotgun']/label</xpath>
+
+        <value>
+          <label>Sawed-Off</label>
+        </value>
+      </li>
+
+      <!-- Tools -->
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_SawedOffShotgun']/tools</xpath>
+
+        <value>
+          <tools>
+            <li Class="CombatExtended.ToolCE">
+              <label>grip</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>2</power>
+              <cooldownTime>1.54</cooldownTime>
+              <chanceFactor>1.5</chanceFactor>
+              <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+            </li>
+            <li Class="CombatExtended.ToolCE">
+              <label>muzzle</label>
+              <capacities>
+                <li>Poke</li>
+              </capacities>
+              <power>2</power>
+              <cooldownTime>1.54</cooldownTime>
+              <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+            </li>
+          </tools>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>

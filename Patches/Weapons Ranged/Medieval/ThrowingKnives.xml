@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_FlyingBlade']/projectile</xpath>
+
+        <value>
+          <projectile Class='CombatExtended.ProjectilePropertiesCE'>
+            <damageDef>RangedStab</damageDef>
+            <damageAmountBase>14</damageAmountBase>
+            <flyOverhead>false</flyOverhead>
+            <speed>16</speed>
+            <armorPenetrationBase>0.18</armorPenetrationBase>
+            <preExplosionSpawnChance>0.80</preExplosionSpawnChance>
+            <preExplosionSpawnThingDef>VWE_Throwing_Knives</preExplosionSpawnThingDef>
+          </projectile>
+        </value>
+      </li>
+
+      <li Class='PatchOperationAdd'>
+        <xpath>Defs/ThingDef[defName='VWE_Throwing_Knives']</xpath>
+
+        <value>
+          <thingClass>CombatExtended.AmmoThing</thingClass>
+          <stackLimit>50</stackLimit>
+          <resourceReadoutPriority>First</resourceReadoutPriority>
+        </value>
+      </li>
+
+      <li Class='PatchOperationAttributeSet'>
+        <xpath>Defs/ThingDef[defName='VWE_Throwing_Knives']</xpath>
+
+        <attribute>Class</attribute>
+        <value>CombatExtended.AmmoDef</value>
+      </li>
+
+      <li Class='CombatExtended.PatchOperationMakeGunCECompatible'>
+        <defName>VWE_Throwing_Knives</defName>
+
+        <statBases>
+          <WorkToMake>4600</WorkToMake>
+          <SightsEfficiency>0.7</SightsEfficiency>
+          <Bulk>1</Bulk>
+          <Mass>1</Mass>
+          <RangedWeapon_Cooldown>0.38</RangedWeapon_Cooldown>
+        </statBases>
+
+        <Properties>
+          <label>Throw knife</label>
+          <verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
+          <hasStandardCommand>True</hasStandardCommand>
+          <defaultProjectile>VWE_FlyingBlade</defaultProjectile>
+          <warmupTime>1</warmupTime>
+          <range>15</range>
+          <soundCast>ThrowGrenade</soundCast>
+        </Properties>
+      </li>
+
+      <!-- Tools -->
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_Throwing_Knives']/tools</xpath>
+
+        <value>
+          <tools>
+            <li Class='CombatExtended.ToolCE'>
+              <label>handle</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>1</power>
+              <cooldownTime>1.2</cooldownTime>
+              <armorPenetrationBlunt>0.250</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+            </li>
+
+            <li Class='CombatExtended.ToolCE'>
+              <label>Blade</label>
+              <capacities>
+                <li>Cut</li>
+              </capacities>
+              <power>6</power>
+              <cooldownTime>1.2</cooldownTime>
+              <armorPenetrationBlunt>0.36</armorPenetrationBlunt>
+              <armorPenetrationSharp>0.32</armorPenetrationSharp>
+              <linkedBodyPartsGroup>Blade</linkedBodyPartsGroup>
+            </li>
+
+            <li Class='CombatExtended.ToolCE'>
+              <label>point</label>
+              <capacities>
+                <li>Stab</li>
+              </capacities>
+              <power>8</power>
+              <cooldownTime>1.26</cooldownTime>
+              <chanceFactor>1.33</chanceFactor>
+              <armorPenetrationBlunt>0.25</armorPenetrationBlunt>
+              <armorPenetrationSharp>0.42</armorPenetrationSharp>
+              <linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+            </li>
+          </tools>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>

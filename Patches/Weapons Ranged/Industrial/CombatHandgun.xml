@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <li Class='CombatExtended.PatchOperationMakeGunCECompatible'>
+        <defName>VWE_CombatHandgun</defName>
+
+        <statBases>
+          <WorkToMake>7000</WorkToMake>
+          <SightsEfficiency>0.75</SightsEfficiency>
+          <ShotSpread>0.17</ShotSpread>
+          <SwayFactor>0.87</SwayFactor>
+          <Bulk>1.75</Bulk>
+          <Mass>0.85</Mass>
+          <RangedWeapon_Cooldown>0.38</RangedWeapon_Cooldown>
+        </statBases>
+
+        <Properties>
+          <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+          <hasStandardCommand>True</hasStandardCommand>
+          <defaultProjectile>Bullet_45ACP_FMJ</defaultProjectile>
+          <warmupTime>0.4</warmupTime>
+          <range>15</range>
+          <soundCast>Shot_Autopistol</soundCast>
+          <soundCastTail>GunTail_Light</soundCastTail>
+          <muzzleFlashScale>9</muzzleFlashScale>
+        </Properties>
+
+        <AmmoUser>
+          <magazineSize>13</magazineSize>
+          <reloadTime>4</reloadTime>
+          <ammoSet>AmmoSet_45ACP</ammoSet>
+        </AmmoUser>
+
+        <FireModes>
+          <aiAimMode>AimedShot</aiAimMode>
+        </FireModes>
+
+        <weaponTags>
+          <li>SimpleGun</li>
+          <li>CE_Sidearm</li>
+          <li>CE_OneHandedWeapon</li>
+        </weaponTags>
+
+        <!-- Required research rework -->
+        <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      </li>
+
+      <!-- Name -->
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_CombatHandgun']/label</xpath>
+
+        <value>
+          <label>M1911A2</label>
+        </value>
+      </li>
+
+      <!-- Tools -->
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_CombatHandgun']/tools</xpath>
+
+        <value>
+          <tools>
+            <li Class="CombatExtended.ToolCE">
+              <label>grip</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>2</power>
+              <cooldownTime>1.54</cooldownTime>
+              <chanceFactor>1.5</chanceFactor>
+              <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+            </li>
+            <li Class="CombatExtended.ToolCE">
+              <label>muzzle</label>
+              <capacities>
+                <li>Poke</li>
+              </capacities>
+              <power>2</power>
+              <cooldownTime>1.54</cooldownTime>
+              <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+            </li>
+          </tools>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>

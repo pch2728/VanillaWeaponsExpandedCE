@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <li Class='CombatExtended.PatchOperationMakeGunCECompatible'>
+        <defName>VWE_Bow_Long</defName>
+
+        <statBases>
+          <WorkToMake>11200</WorkToMake>
+          <SightsEfficiency>0.5</SightsEfficiency>
+          <ShotSpread>0.05</ShotSpread>
+          <SwayFactor>2</SwayFactor>
+          <Bulk>4.2</Bulk>
+          <Mass>2</Mass>
+          <RangedWeapon_Cooldown>1.15</RangedWeapon_Cooldown>
+        </statBases>
+
+        <Properties>
+          <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+          <hasStandardCommand>True</hasStandardCommand>
+          <defaultProjectile>Projectile_GreatArrow_Stone</defaultProjectile>
+          <warmupTime>2.5</warmupTime>
+          <range>35.9</range>
+          <soundCast>Bow_Large</soundCast>
+        </Properties>
+
+        <AmmoUser>
+          <ammoSet>AmmoSet_GreatArrow</ammoSet>
+        </AmmoUser>
+      </li>
+
+      <!-- Tools -->
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_Bow_Long']/tools</xpath>
+
+        <value>
+          <tools>
+            <li Class='CombatExtended.ToolCE'>
+              <label>limb</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>9</power>
+              <cooldownTime>2</cooldownTime>
+              <chanceFactor>1.5</chanceFactor>
+              <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Base</linkedBodyPartsGroup>
+            </li>
+
+            <li Class='CombatExtended.ToolCE'>
+              <label>nock</label>
+              <capacities>
+                <li>Poke</li>
+              </capacities>
+              <power>9</power>
+              <cooldownTime>2</cooldownTime>
+              <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+            </li>
+          </tools>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>

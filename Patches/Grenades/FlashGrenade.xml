@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <!-- Projectile -->
+      <li Class='PatchOperationReplace'>
+        <xpath>*/ThingDef[defName='VWE_Projectile_FlashGrenade']/thingClass</xpath>
+
+        <value>
+          <thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+        </value>
+      </li>
+
+      <li Class='PatchOperationReplace'>
+        <xpath>*/ThingDef[defName='VWE_Projectile_FlashGrenade']/projectile</xpath>
+
+        <value>
+          <projectile Class='CombatExtended.ProjectilePropertiesCE'>
+            <damageDef>Stun</damageDef>
+            <explosionRadius>4.3</explosionRadius>
+            <damageAmountBase>10</damageAmountBase>
+            <explosionDelay>60</explosionDelay>
+            <dropsCasings>true</dropsCasings>
+            <soundExplode>DispensePaste</soundExplode>
+            <casingMoteDefname>Mote_GrenadePin</casingMoteDefname>
+          </projectile>
+        </value>
+      </li>
+
+      <!-- Grenade -->
+      <li Class='PatchOperationAdd'>
+        <xpath>*/ThingDef[defName='VWE_FlashGrenade']</xpath>
+
+        <value>
+          <thingClass>CombatExtended.AmmoThing</thingClass>
+          <stackLimit>75</stackLimit>
+          <resourceReadoutPriority>First</resourceReadoutPriority>
+        </value>
+      </li>
+
+      <li Class='PatchOperationAttributeSet'>
+        <xpath>*/ThingDef[defName='VWE_FlashGrenade']</xpath>
+
+        <attribute>Class</attribute>
+        <value>CombatExtended.AmmoDef</value>
+      </li>
+
+      <li Class='PatchOperationSequence'>
+        <success>Always</success>
+
+        <operations>
+          <li Class='PatchOperationTest'>
+            <xpath>*/ThingDef[defName='VWE_FlashGrenade']/comps</xpath>
+            <success>Invert</success>
+          </li>
+
+          <li Class='PatchOperationAdd'>
+            <xpath>*/ThingDef[defName='VWE_FlashGrenade']</xpath>
+            <value>
+              <comps />
+            </value>
+          </li>
+        </operations>
+      </li>
+
+      <li Class='PatchOperationAdd'>
+        <xpath>*/ThingDef[defName='VWE_FlashGrenade']/comps</xpath>
+
+        <value>
+          <li Class='CombatExtended.CompProperties_ExplosiveCE'>
+            <explosionRadius>2.66</explosionRadius>
+            <explosionDamageDef>Stun</explosionDamageDef>
+          </li>
+        </value>
+      </li>
+
+      <li Class='CombatExtended.PatchOperationMakeGunCECompatible'>
+        <defName>VWE_FlashGrenade</defName>
+
+        <statBases>
+          <Mass>1</Mass>
+          <MarketValue>2.25</MarketValue>
+          <SightsEfficiency>1</SightsEfficiency>
+          <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+        </statBases>
+
+        <Properties>
+          <label>throw flash grenade</label>
+          <verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
+          <hasStandardCommand>true</hasStandardCommand>
+          <defaultProjectile>VWE_Projectile_FlashGrenade</defaultProjectile>
+          <range>13</range>
+          <warmupTime>1.5</warmupTime>
+          <soundCast>ThrowGrenade</soundCast>
+          <noiseRadius>4</noiseRadius>
+          <ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+          <onlyManualCast>true</onlyManualCast>
+          <ignorePartialLoSBlocker>true</ignorePartialLoSBlocker>
+          <targetParams>
+            <canTargetLocations>true</canTargetLocations>
+          </targetParams>
+        </Properties>
+
+        <weaponTags>
+          <li>CE_AI_Grenade</li>
+          <li>CE_OneHandedWeapon</li>
+        </weaponTags>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>

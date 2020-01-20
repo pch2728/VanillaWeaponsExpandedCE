@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <li Class='PatchOperationAdd'>
+        <xpath>Defs/ThingDef[defName='VWE_MeleeWeapon_Pickaxe']/statBases</xpath>
+
+        <value>
+          <Bulk>3.9</Bulk>
+          <MeleeCounterParryBonus>0.15</MeleeCounterParryBonus>
+        </value>
+      </li>
+
+      <li Class='PatchOperationAdd'>
+        <xpath>Defs/ThingDef[defName='VWE_MeleeWeapon_Pickaxe']/equippedStatOffsets</xpath>
+
+        <value>
+          <MeleeCritChance>0.20</MeleeCritChance>
+          <MeleeParryChance>0.15</MeleeParryChance>
+          <MeleeDodgeChance>0.2</MeleeDodgeChance>
+        </value>
+      </li>
+
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_MeleeWeapon_Pickaxe']/tools</xpath>
+
+        <value>
+          <tools>
+            <li Class='CombatExtended.ToolCE'>
+              <label>handle</label>
+              <capacities>
+                <li>Poke</li>
+              </capacities>
+              <power>4</power>
+              <cooldownTime>1.8</cooldownTime>
+              <armorPenetrationBlunt>0.325</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+            </li>
+
+            <li Class='CombatExtended.ToolCE'>
+              <label>Head</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>8</power>
+              <cooldownTime>1.8</cooldownTime>
+              <armorPenetrationBlunt>1</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
+            </li>
+
+            <li Class='CombatExtended.ToolCE'>
+              <label>Point</label>
+              <capacities>
+                <li>Stab</li>
+              </capacities>
+              <power>13</power>
+              <cooldownTime>1.8</cooldownTime>
+              <chanceFactor>1.33</chanceFactor>
+              <armorPenetrationBlunt>2.25</armorPenetrationBlunt>
+              <armorPenetrationSharp>1.5</armorPenetrationSharp>
+              <linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+            </li>
+          </tools>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

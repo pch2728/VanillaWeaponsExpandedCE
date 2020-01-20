@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <li Class='CombatExtended.PatchOperationMakeGunCECompatible'>
+        <defName>VWE_Gun_GrenadeLauncher</defName>
+
+        <statBases>
+          <WorkToMake>10000</WorkToMake>
+          <SightsEfficiency>1</SightsEfficiency>
+          <ShotSpread>0.18</ShotSpread>
+          <SwayFactor>1.31</SwayFactor>
+          <Bulk>5.65</Bulk>
+          <Mass>5.3</Mass>
+          <RangedWeapon_Cooldown>0.39</RangedWeapon_Cooldown>
+        </statBases>
+
+        <Properties>
+          <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+          <hasStandardCommand>True</hasStandardCommand>
+          <defaultProjectile>Bullet_40x46mmGrenade_HE</defaultProjectile>
+          <warmupTime>1</warmupTime>
+          <range>40</range>
+          <minRange>5</minRange>
+          <soundCast>Shot_Autopistol</soundCast>
+          <soundCastTail>GunTail_Light</soundCastTail>
+          <muzzleFlashScale>14</muzzleFlashScale>
+          <recoilAmount>2.93</recoilAmount>
+          <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        </Properties>
+
+        <AmmoUser>
+          <magazineSize>6</magazineSize>
+          <reloadTime>5.1</reloadTime>
+          <ammoSet>AmmoSet_40x46mmGrenade</ammoSet>
+        </AmmoUser>
+
+        <FireModes>
+          <aiUseBurstMode>False</aiUseBurstMode>
+          <aiAimMode>SuppressFire</aiAimMode>
+        </FireModes>
+
+        <weaponTags>
+          <li>GunHeavy</li>
+        </weaponTags>
+
+        <!-- Required research rework -->
+        <researchPrerequisite>CE_Launchers</researchPrerequisite>
+      </li>
+
+      <!-- Tools -->
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_Gun_GrenadeLauncher']/tools</xpath>
+
+        <value>
+          <tools>
+            <li Class="CombatExtended.ToolCE">
+              <label>stock</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>8</power>
+              <cooldownTime>1.55</cooldownTime>
+              <chanceFactor>1.5</chanceFactor>
+              <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+            </li>
+
+            <li Class="CombatExtended.ToolCE">
+              <label>barrel</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>10</power>
+              <cooldownTime>2.44</cooldownTime>
+              <armorPenetrationBlunt>3.5</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+            </li>
+          </tools>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>

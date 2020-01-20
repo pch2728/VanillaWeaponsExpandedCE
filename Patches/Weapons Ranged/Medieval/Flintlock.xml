@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <!-- Replacing custom verb with vanilla (cuz CE cries) -->
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_Gun_Flintlock']/verbs/li/verbClass</xpath>
+
+        <value>
+          <verbClass>Verb_Shoot</verbClass>
+        </value>
+      </li>
+
+      <li Class='CombatExtended.PatchOperationMakeGunCECompatible'>
+        <defName>VWE_Gun_Flintlock</defName>
+
+        <statBases>
+          <WorkToMake>18000</WorkToMake>
+          <SightsEfficiency>1</SightsEfficiency>
+          <ShotSpread>0.9</ShotSpread>
+          <SwayFactor>1.92</SwayFactor>
+          <Bulk>1.6</Bulk>
+          <Mass>1.6</Mass>
+          <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+        </statBases>
+
+        <Properties>
+          <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+          <hasStandardCommand>True</hasStandardCommand>
+          <defaultProjectile>Bullet_VWE_LeadBall</defaultProjectile>
+          <burstShotCount>1</burstShotCount>
+          <warmupTime>1.55</warmupTime>
+          <range>25.9</range>
+          <soundCast>VWE_Shot_Musket</soundCast>
+          <soundCastTail>GunTail_Heavy</soundCastTail>
+          <muzzleFlashScale>9</muzzleFlashScale>
+        </Properties>
+
+        <AmmoUser>
+          <magazineSize>1</magazineSize>
+          <reloadTime>6.5</reloadTime>
+          <ammoSet>AmmoSet_VWE_LeadBall</ammoSet>
+        </AmmoUser>
+
+        <FireModes>
+          <aiAimMode>AimedShot</aiAimMode>
+        </FireModes>
+
+        <weaponTags>
+          <li>NeolithicRangedHeavy</li>
+          <li>NeolithicRangedChief</li>
+        </weaponTags>
+      </li>
+
+      <!-- Tools -->
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_Gun_Flintlock']/tools</xpath>
+
+        <value>
+          <tools>
+            <li Class="CombatExtended.ToolCE">
+              <label>grip</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>2</power>
+              <cooldownTime>1.54</cooldownTime>
+              <chanceFactor>1.5</chanceFactor>
+              <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+            </li>
+            <li Class="CombatExtended.ToolCE">
+              <label>muzzle</label>
+              <capacities>
+                <li>Poke</li>
+              </capacities>
+              <power>2</power>
+              <cooldownTime>1.54</cooldownTime>
+              <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+            </li>
+          </tools>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>

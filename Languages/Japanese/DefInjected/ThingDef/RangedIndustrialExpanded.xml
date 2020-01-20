@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Compound Bow -->
+
+  <VWE_Bow_Compound.tools.nock.label>ノック</VWE_Bow_Compound.tools.nock.label>
+  <VWE_Bow_Compound.verbs.Verb_ShootCE.label>コンパウンドボウ</VWE_Bow_Compound.verbs.Verb_ShootCE.label>
+
+
+  <!-- Hand Cannon -->
+
+  <VWE_Gun_HandCannon.verbs.Verb_ShootCE.label>ハンドキャノン</VWE_Gun_HandCannon.verbs.Verb_ShootCE.label>
+
+
+  <!-- Combat Handgun -->
+
+  <VWE_CombatHandgun.verbs.Verb_ShootCE.label>軍用拳銃</VWE_CombatHandgun.verbs.Verb_ShootCE.label>
+
+
+  <!-- Sawed-off Shotgun -->
+
+  <VWE_SawedOffShotgun.verbs.Verb_ShootCE.label>ソードオフショットガン</VWE_SawedOffShotgun.verbs.Verb_ShootCE.label>
+
+
+  <!-- Grenade Launcher -->
+
+  <VWE_Gun_GrenadeLauncher.verbs.Verb_ShootCE.label>グレネードランチャー</VWE_Gun_GrenadeLauncher.verbs.Verb_ShootCE.label>
+
+
+  <!-- Flamethrower -->
+
+  <VWE_Gun_Flamethrower.verbs.Verb_ShootCE.label>火炎放射器</VWE_Gun_Flamethrower.verbs.Verb_ShootCE.label>
+
+
+  <!-- Fire Extinguisher -->
+
+  <VWE_Gun_FireExtinguisher.tools.stock.label>ストック</VWE_Gun_FireExtinguisher.tools.stock.label>
+  <VWE_Gun_FireExtinguisher.tools.barrel.label>バレル</VWE_Gun_FireExtinguisher.tools.barrel.label>
+  <VWE_Gun_FireExtinguisher.verbs.Verb_ShootCE.label>消火器</VWE_Gun_FireExtinguisher.verbs.Verb_ShootCE.label>
+
+
+  <!-- Semi-Automatic Rifle -->
+
+  <VWE_Gun_SemiAutomaticRifle.verbs.Verb_ShootCE.label>半自動ライフル</VWE_Gun_SemiAutomaticRifle.verbs.Verb_ShootCE.label>
+
+
+  <!-- Lever-Action Rifle -->
+
+  <VWE_Gun_LeverActionRifle.verbs.Verb_ShootCE.label>レバーアクションライフル</VWE_Gun_LeverActionRifle.verbs.Verb_ShootCE.label>
+
+
+  <!-- Light SMG -->
+
+  <VWE_Gun_LightSMG.verbs.Verb_ShootCE.label>小型短機関銃</VWE_Gun_LightSMG.verbs.Verb_ShootCE.label>
+
+
+  <!-- SMG -->
+
+  <VWE_Gun_SMG.verbs.Verb_ShootCE.label>短機関銃</VWE_Gun_SMG.verbs.Verb_ShootCE.label>
+
+
+  <!-- HMG -->
+
+  <VWE_Gun_HMG.verbs.Verb_ShootCE.label>重機関銃</VWE_Gun_HMG.verbs.Verb_ShootCE.label>
+
+
+  <!-- Service Rifle -->
+
+  <VWE_Gun_ServiceRifle.verbs.Verb_ShootCE.label>民兵ライフル</VWE_Gun_ServiceRifle.verbs.Verb_ShootCE.label>
+
+
+  <!-- Battle Rifle -->
+
+  <VWE_Gun_BattleRifle.verbs.Verb_ShootCE.label>バトルライフル</VWE_Gun_BattleRifle.verbs.Verb_ShootCE.label>
+
+
+  <!-- Carbine -->
+
+  <VWE_Gun_Carbine.verbs.Verb_ShootCE.label>カービン銃</VWE_Gun_Carbine.verbs.Verb_ShootCE.label>
+
+
+  <!-- Marksman Rifle -->
+
+  <VWE_Gun_MarksmanRifle.verbs.Verb_ShootCE.label>セミオート狙撃銃</VWE_Gun_MarksmanRifle.verbs.Verb_ShootCE.label>
+
+
+  <!-- Anti-Materiel Rifle -->
+
+  <VWE_Gun_AntiMaterialRifle.verbs.Verb_ShootCE.label>対物ライフル</VWE_Gun_AntiMaterialRifle.verbs.Verb_ShootCE.label>
+
+</LanguageData>

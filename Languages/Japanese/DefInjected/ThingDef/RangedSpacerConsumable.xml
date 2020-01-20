@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Charge Rocket Launcher -->
+
+  <VWE_Gun_ChargeRocketLauncher.tools.grip.label>グリップ</VWE_Gun_ChargeRocketLauncher.tools.grip.label>
+  <VWE_Gun_ChargeRocketLauncher.verbs.Verb_ShootCEOneUse.label>チャージロケットランチャー</VWE_Gun_ChargeRocketLauncher.verbs.Verb_ShootCEOneUse.label>
+
+</LanguageData>

@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_Rock']/projectile</xpath>
+
+        <value>
+          <projectile Class='CombatExtended.ProjectilePropertiesCE'>
+            <damageDef>Blunt</damageDef>
+            <damageAmountBase>8</damageAmountBase>
+            <flyOverhead>false</flyOverhead>
+            <speed>12</speed>
+            <armorPenetrationBase>0.18</armorPenetrationBase>
+            <preExplosionSpawnChance>0.80</preExplosionSpawnChance>
+            <preExplosionSpawnThingDef>VWE_Throwing_Rocks</preExplosionSpawnThingDef>
+          </projectile>
+        </value>
+      </li>
+
+      <li Class='PatchOperationAdd'>
+        <xpath>Defs/ThingDef[defName='VWE_Throwing_Rocks']</xpath>
+
+        <value>
+          <thingClass>CombatExtended.AmmoThing</thingClass>
+          <stackLimit>50</stackLimit>
+          <resourceReadoutPriority>First</resourceReadoutPriority>
+        </value>
+      </li>
+
+      <li Class='PatchOperationAttributeSet'>
+        <xpath>Defs/ThingDef[defName='VWE_Throwing_Rocks']</xpath>
+
+        <attribute>Class</attribute>
+        <value>CombatExtended.AmmoDef</value>
+      </li>
+
+      <li Class='CombatExtended.PatchOperationMakeGunCECompatible'>
+        <defName>VWE_Throwing_Rocks</defName>
+
+        <statBases>
+          <WorkToMake>1200</WorkToMake>
+          <SightsEfficiency>1</SightsEfficiency>
+          <Bulk>3</Bulk>
+          <Mass>3</Mass>
+          <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
+        </statBases>
+
+        <Properties>
+          <label>Throw Rock</label>
+          <verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
+          <hasStandardCommand>True</hasStandardCommand>
+          <defaultProjectile>VWE_Rock</defaultProjectile>
+          <warmupTime>1.5</warmupTime>
+          <range>15</range>
+          <soundCast>ThrowGrenade</soundCast>
+        </Properties>
+      </li>
+
+      <!-- Tools -->
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_Throwing_Rocks']/tools</xpath>
+
+        <value>
+          <tools>
+            <li Class='CombatExtended.ToolCE'>
+              <label>edge</label>
+              <capacities>
+                <li>Blunt</li>
+                <li>Cut</li>
+              </capacities>
+              <power>10</power>
+              <cooldownTime>2</cooldownTime>
+              <chanceFactor>1.5</chanceFactor>
+              <armorPenetrationBlunt>1</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+            </li>
+          </tools>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>

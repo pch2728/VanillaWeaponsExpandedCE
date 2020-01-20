@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Pickaxe -->
+
+  <VWE_MeleeWeapon_Pickaxe.tools.head.label>頭</VWE_MeleeWeapon_Pickaxe.tools.head.label>
+
+
+  <!-- Battle Axe -->
+
+  <VWE_MeleeWeapon_BattleAxe.tools.head.label>斧頭</VWE_MeleeWeapon_BattleAxe.tools.head.label>
+
+
+  <!-- Halberd -->
+
+  <VWE_MeleeWeapon_Halberd.tools.head.label>斧頭</VWE_MeleeWeapon_Halberd.tools.head.label>
+  <VWE_MeleeWeapon_Halberd.tools.edge.label>刃峰</VWE_MeleeWeapon_Halberd.tools.edge.label>
+
+</LanguageData>

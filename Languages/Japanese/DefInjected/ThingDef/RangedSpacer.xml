@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Charge Pistol -->
+
+  <VWE_Gun_ChargePistol.tools.grip.label>グリップ</VWE_Gun_ChargePistol.tools.grip.label>
+  <VWE_Gun_ChargePistol.verbs.Verb_ShootCE.label>チャージピストル</VWE_Gun_ChargePistol.verbs.Verb_ShootCE.label>
+
+
+  <!-- Charge Shotgun -->
+
+  <VWE_Gun_ChargeShotgun.tools.stock.label>ストック</VWE_Gun_ChargeShotgun.tools.stock.label>
+  <VWE_Gun_ChargeShotgun.verbs.Verb_ShootCE.label>チャージショットガン</VWE_Gun_ChargeShotgun.verbs.Verb_ShootCE.label>
+
+
+  <!-- Charge SMG -->
+
+  <VWE_Gun_ChargeSMG.tools.grip.label>グリップ</VWE_Gun_ChargeSMG.tools.grip.label>
+  <VWE_Gun_ChargeSMG.verbs.Verb_ShootCE.label>チャージサブマシンガン</VWE_Gun_ChargeSMG.verbs.Verb_ShootCE.label>
+
+
+  <!-- Charge LMG -->
+
+  <VWE_Gun_ChargeLMG.tools.stock.label>ストック</VWE_Gun_ChargeLMG.tools.stock.label>
+  <VWE_Gun_ChargeLMG.verbs.Verb_ShootCE.label>チャージ軽機関銃</VWE_Gun_ChargeLMG.verbs.Verb_ShootCE.label>
+
+
+  <!-- Charge Sniper Rifle -->
+
+  <VWE_Gun_ChargeSniperRifle.verbs.Verb_ShootCE.label>チャージ狙撃銃</VWE_Gun_ChargeSniperRifle.verbs.Verb_ShootCE.label>
+
+
+  <!-- Charge Minigun -->
+
+  <VWE_Gun_ChargeMinigun.tools.grip.label>グリップ</VWE_Gun_ChargeMinigun.tools.grip.label>
+  <VWE_Gun_ChargeMinigun.verbs.Verb_ShootCE.label>チャージガトリング</VWE_Gun_ChargeMinigun.verbs.Verb_ShootCE.label>
+
+</LanguageData>

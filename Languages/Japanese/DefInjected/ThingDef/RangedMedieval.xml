@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Crossbow -->
+
+  <VWE_Bow_Crossbow.verbs.Verb_ShootCE.label>クロスボウ</VWE_Bow_Crossbow.verbs.Verb_ShootCE.label>
+
+
+  <!-- Musket -->
+
+  <VWE_Gun_Musket.tools.grip.label>グリップ</VWE_Gun_Musket.tools.grip.label>
+  <VWE_Gun_Musket.verbs.Verb_ShootCE.label>マスケット銃</VWE_Gun_Musket.verbs.Verb_ShootCE.label>
+
+
+  <!-- Flintlock -->
+
+  <VWE_Gun_Flintlock.tools.grip.label>グリップ</VWE_Gun_Flintlock.tools.grip.label>
+  <VWE_Gun_Flintlock.verbs.Verb_ShootCE.label>フリントロック銃</VWE_Gun_Flintlock.verbs.Verb_ShootCE.label>
+
+
+  <!-- Throwing Knives -->
+
+  <VWE_Throwing_Knives.tools.edge.label>エッジ</VWE_Throwing_Knives.tools.edge.label>
+
+
+  <!-- Whip -->
+
+  <VWE_Tool_Whip.tools.handle.label>柄</VWE_Tool_Whip.tools.handle.label>
+  <VWE_Tool_Whip.verbs.Verb_ShootCE.label>鞭</VWE_Tool_Whip.verbs.Verb_ShootCE.label>
+
+</LanguageData>

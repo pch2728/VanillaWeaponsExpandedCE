@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Patch>
+  <Operation Class='PatchOperationSequence'>
+    <success>Always</success>
+
+    <operations>
+      <li Class='CombatExtended.PatchOperationFindMod'>
+        <modName>Vanilla Weapons Expanded</modName>
+      </li>
+
+      <li Class='CombatExtended.PatchOperationMakeGunCECompatible'>
+        <defName>VWE_Gun_RocketLauncher</defName>
+
+        <statBases>
+          <WorkToMake>12000</WorkToMake>
+          <SightsEfficiency>2</SightsEfficiency>
+          <ShotSpread>0.34</ShotSpread>
+          <SwayFactor>2.08</SwayFactor>
+          <Bulk>8.35</Bulk>
+          <Mass>5</Mass>
+          <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+        </statBases>
+
+        <Properties>
+          <verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
+          <hasStandardCommand>True</hasStandardCommand>
+          <defaultProjectile>Bullet_Rocket</defaultProjectile>
+          <burstShotCount>1</burstShotCount>
+          <warmupTime>3</warmupTime>
+          <range>36</range>
+          <!-- <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius> -->
+          <soundCast>InfernoCannon_Fire</soundCast>
+          <soundCastTail>GunTail_Heavy</soundCastTail>
+          <muzzleFlashScale>14</muzzleFlashScale>
+        </Properties>
+
+        <FireModes>
+          <aiUseBurstMode>False</aiUseBurstMode>
+          <aiAimMode>AimedShot</aiAimMode>
+        </FireModes>
+
+        <weaponTags>
+          <li>GunHeavy</li>
+        </weaponTags>
+
+        <!-- Research prerequisite rework   -->
+        <researchPrerequisite>CE_AdvancedLaunchers</researchPrerequisite>
+      </li>
+
+      <!-- Tools -->
+      <li Class='PatchOperationReplace'>
+        <xpath>Defs/ThingDef[defName='VWE_Gun_RocketLauncher']/tools</xpath>
+
+        <value>
+          <tools>
+            <li Class="CombatExtended.ToolCE">
+              <label>barrel</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>10</power>
+              <cooldownTime>2.44</cooldownTime>
+              <armorPenetrationBlunt>3.5</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+            </li>
+          </tools>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>
