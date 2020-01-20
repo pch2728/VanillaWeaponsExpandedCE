@@ -5,5 +5,13 @@
   <supportedVersions>
     <li>1.0</li>
   </supportedVersions>
-  <description>CE Patch\n\nAny issues please provide feedback in the comment section.</description>
+  <description>
+<![CDATA[<b>Vanilla Weapons Expanded CE</b>
+This pack patches the weapons from the current and future releases of Vanilla Weapons Expanded.
+  
+<b>Load Order:</b>
+- Vanilla Weapons Expanded
+- Vanilla Weapons Expanded - Quickdraw
+- This Mod]]>
+  </description>
 </ModMetaData>

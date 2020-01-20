@@ -37,7 +37,8 @@
                     defName = 'VWE_HeavyWeapons' or
                     defName = 'VWE_DesignatedMarksmanRifle' or
                     defName = 'VWE_SpecializedFirearms' or
-                    defName = 'VWE_Flamethrower' or]
+                    defName = 'VWE_Flamethrower' or
+                    defName = 'VWE_HeavyWeapons']
                 </xpath>
               </li>
 

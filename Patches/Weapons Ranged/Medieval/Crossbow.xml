@@ -56,9 +56,9 @@
               <capacities>
                 <li>Blunt</li>
               </capacities>
-              <power>9</power>
+              <power>4</power>
               <cooldownTime>2</cooldownTime>
-              <armorPenetration>0.15</armorPenetration>
+              <armorPenetrationBlunt>0.155</armorPenetrationBlunt>
               <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
             </li>
 
@@ -70,8 +70,8 @@
               </capacities>
               <power>9</power>
               <cooldownTime>2</cooldownTime>
-              <armorPenetration>0.120</armorPenetration>
-              <linkedBodyPartsGroup>Body</linkedBodyPartsGroup>
+              <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Base</linkedBodyPartsGroup>
             </li>
 
             <li Class='CombatExtended.ToolCE'>
@@ -81,7 +81,7 @@
               </capacities>
               <power>9</power>
               <cooldownTime>2</cooldownTime>
-              <armorPenetration>0.120</armorPenetration>
+              <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
               <linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
             </li>
           </tools>

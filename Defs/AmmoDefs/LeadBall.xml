@@ -26,8 +26,16 @@
   </CombatExtended.AmmoSetDef>
 
   <!-- Ammo -->
-  <ThingDef Class="CombatExtended.AmmoDef" Name="VWE_LeadBall" ParentName="NeolithicAmmoBase" Abstract="True">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="NeolithicAmmoBase">
+    <defName>Ammo_VWE_LeadBall</defName>
+    <label>lead ball</label>
     <description>Projectile traditionally fired from a smooth-bore musket and flintlock pistols.</description>
+    <ammoClass>LeadBall</ammoClass>
+
+    <graphicData>
+      <texPath>Things/Ammo/Neolithic/SlingBullet/Steel</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
 
     <statBases>
       <Mass>0.01</Mass>
@@ -48,20 +56,8 @@
     </tradeTags>
   </ThingDef>
 
-  <ThingDef Class="CombatExtended.AmmoDef" ParentName="VWE_LeadBall">
-    <defName>Ammo_VWE_LeadBall</defName>
-    <label>lead ball</label>
-
-    <graphicData>
-      <texPath>Things/Ammo/Neolithic/SlingBullet/Steel</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-    </graphicData>
-
-    <ammoClass>LeadBall</ammoClass>
-  </ThingDef>
-
   <!-- Projectile -->
-  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseBullet" Name="VFWE_MusketProj" Abstract="true">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseBullet">
     <defName>Bullet_VWE_LeadBall</defName>
     <label>lead ball</label>
 
@@ -78,7 +74,7 @@
       <armorPenetrationBlunt>1.5</armorPenetrationBlunt>
       <armorPenetrationSharp>1</armorPenetrationSharp>
       <preExplosionSpawnChance>0.5</preExplosionSpawnChance>
-      <preExplosionSpawnThingDef>Ammo_VWE_LeadBall</preExplosionSpawnThingDef>
+      <preExplosionSpawnThingDef>Bullet_VWE_LeadBall</preExplosionSpawnThingDef>
     </projectile>
   </ThingDef>
 

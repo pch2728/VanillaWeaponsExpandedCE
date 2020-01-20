@@ -63,21 +63,21 @@
               <capacities>
                 <li>Blunt</li>
               </capacities>
-              <power>8</power>
+              <power>2</power>
               <cooldownTime>1.55</cooldownTime>
               <chanceFactor>1.5</chanceFactor>
               <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
               <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
             </li>
             <li Class="CombatExtended.ToolCE">
-              <label>bottom</label>
+              <label>tank</label>
               <capacities>
                 <li>Blunt</li>
               </capacities>
-              <power>5</power>
+              <power>8</power>
               <cooldownTime>2.02</cooldownTime>
               <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
-              <linkedBodyPartsGroup>Body</linkedBodyPartsGroup>
+              <linkedBodyPartsGroup>Base</linkedBodyPartsGroup>
             </li>
           </tools>
         </value>
