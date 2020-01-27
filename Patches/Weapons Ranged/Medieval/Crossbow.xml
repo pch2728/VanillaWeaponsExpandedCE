@@ -47,7 +47,7 @@
 
       <!-- Tools -->
       <li Class='PatchOperationReplace'>
-        <xpath>Defs/ThingDef[defName='VWE_Gun_Crossbow']/tools</xpath>
+        <xpath>Defs/ThingDef[defName='VWE_Bow_Crossbow']/tools</xpath>
 
         <value>
           <tools>
