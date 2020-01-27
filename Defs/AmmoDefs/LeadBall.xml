@@ -71,7 +71,7 @@
       <speed>65</speed>
 
       <damageAmountBase>20</damageAmountBase>
-      <armorPenetrationBlunt>1.5</armorPenetrationBlunt>
+      <armorPenetrationBlunt>1.7</armorPenetrationBlunt>
       <armorPenetrationSharp>1</armorPenetrationSharp>
       <preExplosionSpawnChance>0.5</preExplosionSpawnChance>
       <preExplosionSpawnThingDef>Bullet_VWE_LeadBall</preExplosionSpawnThingDef>
@@ -100,7 +100,7 @@
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <Ammo_VWE_LeadBall>10</Ammo_VWE_LeadBall>
+      <Ammo_VWE_LeadBall>100</Ammo_VWE_LeadBall>
     </products>
   </RecipeDef>
 
